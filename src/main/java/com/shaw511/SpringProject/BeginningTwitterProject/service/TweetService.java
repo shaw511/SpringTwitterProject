@@ -17,7 +17,7 @@ public class TweetService {
     @Autowired
     private TweetRespository tweetRespository;
 
-    
+
 
     public List<Tweet> getAllTweets(){
         List<Tweet> tweets = new ArrayList<>();

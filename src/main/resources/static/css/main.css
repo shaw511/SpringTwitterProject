@@ -1,0 +1,19 @@
+body{
+	padding:0px;
+	margin:0px;
+}
+
+.header{
+	background-color:#89e359;
+	font-family:Impact;
+	font-size:40pt;
+	width:100%;
+}
+
+.headerText{
+	padding:30px;
+	
+}
+.content{
+	margin: auto;
+}
