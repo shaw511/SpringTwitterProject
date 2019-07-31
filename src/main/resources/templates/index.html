@@ -1,0 +1,27 @@
+
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Your tweet.</title>
+</head>
+<body>
+    <form action="/tweets" method="POST">
+        <h2>Enter your tweet here</h2>
+        <br />
+        <input type="text" name="content" />
+        <input type="text" name="id" />
+        <br />
+        <input type="submit" value="Tweet" />
+    </form>
+
+    <br />
+    <h1>Past Tweets</h1>
+
+        <ul>
+
+                <li th:each="tweet : ${tweets}"><p th:text="${tweet.content}"></p></li>
+
+        </ul>
+
+</body>
+</html>
