@@ -23,30 +23,9 @@ public class TweetRestController {
     }
 
     @GetMapping("/tweets/{id}")
-    public Tweet getTweet(@PathVariable String id){
-        return tweetService.getTweet(Integer.parseInt(id));
+    public Tweet getTweet(@PathVariable Integer id){
+        return tweetService.getTweet(id);
     }
 
-    @PostMapping(path = "/tweets")
-    public ModelAndView addTweet(@RequestParam String content, @RequestParam String id){
-        Tweet newTweet = new Tweet(content, Integer.parseInt(id));
-        tweetService.addTweet(newTweet);
 
-        return new ModelAndView("redirect:/");
-
-    }
-
-    @GetMapping("/")
-    public ModelAndView showTweets(){
-        List<Tweet> tweets = tweetService.getAllTweets();
-        Collections.reverse(tweets);
-
-
-        ModelAndView model = new ModelAndView("index");
-
-        model.addObject("tweets", tweets);
-
-        return model;
-
-    }
 }

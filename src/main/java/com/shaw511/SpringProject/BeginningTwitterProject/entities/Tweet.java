@@ -1,16 +1,23 @@
 package com.shaw511.SpringProject.BeginningTwitterProject.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Random;
 
+@Entity
 public class Tweet {
 
+    @Id
+    private Integer id;
     private String content;
-    private int id;
+
 
     public Tweet(){}
 
-    public Tweet(String content, int id){
+    public Tweet(String content){
+        Random random = new Random();
         this.content = content;
-        this.id = id;
+        this.id = new Integer(random.nextInt(10000));
     }
 
     public String getContent() {
@@ -25,7 +32,5 @@ public class Tweet {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 }
